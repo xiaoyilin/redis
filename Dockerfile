@@ -5,9 +5,9 @@ LABEL description="Redis"
 ENV HOSTNAME xiaoyilin-redis
 
 # Redis版本
-ENV VERSION 5.0.7
+ENV VERSION 5.0.8
 # 下载地址
-ENV DOWNLOAD_URL http://download.redis.io/releases/redis-5.0.7.tar.gz
+ENV DOWNLOAD_URL http://download.redis.io/releases/redis-5.0.8.tar.gz
 
 USER root
 RUN apt-get update &&  \
@@ -21,8 +21,8 @@ RUN apt-get update &&  \
 
 WORKDIR /opt
 
-RUN  wget $DOWNLOAD_URL &&  tar -xvf redis-5.0.7.tar.gz && rm -rf redis-5.0.7.tar.gz
-WORKDIR /opt/redis-5.0.7
+RUN  wget $DOWNLOAD_URL &&  tar -xvf redis-5.0.8.tar.gz && rm -rf redis-5.0.8.tar.gz
+WORKDIR /opt/redis-5.0.8
 RUN  make PREFIX=/opt/redis install   && \
      mkdir /opt/redis/etc/           && \
      mkdir /opt/redis/bin/           && \
